@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(241, 241, 241);
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  margin: 3% 5%;
+}
+
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.About {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 20px;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  -webkit-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  -moz-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  grid-row: 1/4;
+}
+.About .profile-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  -o-object-position: center;
+     object-position: center;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+}
+.About .about-description {
+  padding: 5px 10px;
+}
+.About .about-description .about-head h1 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #353535;
+}
+.About .about-description .about-head p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  /* Gray 3 */
+  color: #646464;
+}
+.About .about-description .contact-div {
+  margin: 20px 0;
+}
+.About .about-description .contact-div span .icon {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+}
+.About .about-description .contact-div span a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+  font-size: 16px;
+}
+.About .about-description .about-summary {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  /* Gray 3 */
+  color: #5e5e5e;
+}
+
+.skills {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 20px;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  -webkit-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  -moz-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+}
+.skills h2 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  /* Gray 2 */
+  color: #4F4F4F;
+}
+.skills table {
+  width: 100%;
+}
+.skills table tbody {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #4F4F4F;
+  margin: 0;
+  padding: 0;
+}
+.skills table tbody tr td.name {
+  width: 30%;
+}
+.skills table tbody tr td .outer-box {
+  background-color: rgb(184, 184, 184);
+  height: 8px;
+  margin: 10px;
+}
+.skills table tbody tr td .outer-box .inner-box {
+  background-color: #E51D53;
+  height: 100%;
+  width: 90%;
+}
+
+.projects {
+  grid-column: 2/4;
+}
+.projects h1 {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 20px;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  -webkit-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  -moz-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+  color: #353535;
+}
+.projects .all-projects .project-div {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 20px;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  -webkit-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  -moz-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.projects .all-projects .project-div img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 30%;
+  -o-object-position: center;
+     object-position: center;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+.projects .all-projects .project-div .tags {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+  color: #4F4F4F;
+}
+.projects .all-projects .project-div .tags span {
+  margin: 5px;
+}
+.projects .all-projects .project-div h2 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+}
+.projects .all-projects .project-div p {
+  font-size: 16px;
+  line-height: 20px;
+  color: #5e5e5e;
+}
+.projects .all-projects .project-div .buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+.projects .all-projects .project-div .buttons a {
+  text-decoration: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 12px;
+  margin: 20px 10px 0 0;
+}
+.projects .all-projects .project-div .buttons .demo {
+  color: white;
+  background-color: #E51D53;
+}
+.projects .all-projects .project-div .buttons .code {
+  color: #E51D53;
+  background-color: white;
+  border: 1px solid #E51D53;
+}/*# sourceMappingURL=index.css.map */

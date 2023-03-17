@@ -1,0 +1,260 @@
+// Light Backgroud theme
+$body-bg: rgb(241, 241, 241);
+$component-bg: white;
+$text: black;
+$component-shadow: rgba(110, 110, 110, 0.3);
+$pcolor : #5e5e5e;
+$h1color: #353535;
+// Dark Backgroud theme
+// $body-bg: rgb(0, 0, 0);
+// $component-bg: rgb(41, 41, 41);
+// $text: rgb(255, 255, 255);
+// $component-shadow: rgba(191, 191, 191, 0.3);
+
+$filling : #E51D53;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@mixin card {
+    background-color: $component-bg;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 20px;
+    height: fit-content;
+    box-shadow: 0px 8px 15px 0px $component-shadow;
+    -webkit-box-shadow: 0px 8px 15px 0px $component-shadow;
+    -moz-box-shadow: 0px 8px 15px 0px $component-shadow;
+}
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin zerogap {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $body-bg;
+    font-family: 'Montserrat', sans-serif;
+    color: $text;
+}
+
+.App {
+    // max-width: 1024px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
+    margin: 3% 5%;
+}
+
+h1,
+p {
+    @include zerogap;
+}
+
+.About {
+    @include card;
+    grid-row: 1/4;
+
+    .profile-image {
+        object-fit: cover;
+        width: 100%;
+        object-position: center;
+        aspect-ratio: 1/1;
+        border-radius: 12px;
+    }
+
+    .about-description {
+        padding: 5px 10px;
+
+        .about-head {
+            h1 {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 29px;
+
+                color: $h1color;
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;
+                /* Gray 3 */
+                color: #646464;
+            }
+        }
+
+        .contact-div {
+            margin: 20px 0;
+
+            span {
+                .icon {
+                    object-fit: cover;
+                    width: 20px;
+                    height: 20px;
+                    position: relative;
+                    top: 5px;
+                    margin-right: 10px;
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: 1rem;
+                    color: $text;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .about-summary {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+            /* Gray 3 */
+            color: $pcolor;
+        }
+    }
+}
+
+.skills {
+    @include card;
+
+    h2 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+
+        /* Gray 2 */
+
+        color: #4F4F4F;
+    }
+
+    table {
+        width: 100%;
+
+        tbody {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            color: #4F4F4F;
+            @include zerogap;
+
+            tr {
+                td.name {
+                    width: 30%;
+                }
+
+                td {
+                    .outer-box {
+                        background-color: rgb(184, 184, 184);
+                        height: 8px;
+                        margin: 10px;
+
+                        .inner-box {
+                            background-color: $filling;
+                            height: 100%;
+                            width: 90%;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+.projects {
+    grid-column: 2/4;
+
+    h1 {
+        @include card;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        /* identical to box height */
+        color: $h1color;
+    }
+
+    .all-projects {
+        .project-div {
+            @include card;
+            @include flex(row, space-between, center);
+
+            img {
+                object-fit: cover;
+                width: 30%;
+                object-position: center;
+                aspect-ratio: 1/1;
+                border-radius: 12px;
+                margin-right: 20px;
+            }
+
+            .tags {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                /* identical to box height */
+                color: #4F4F4F;
+
+                span {
+                    margin: 5px;
+                }
+            }
+
+            h2 {
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 29px;
+                color: #333333;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 20px;
+
+                color: $pcolor;
+            }
+
+            .buttons {
+                @include flex(row, flex-start, center);
+
+                a {
+                    text-decoration: none;
+                    padding: 10px 20px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+                    border-radius: 12px;
+                    margin: 20px 10px 0 0;
+                }
+
+                .demo {
+                    color: white;
+                    background-color: $filling;
+                }
+                .code {
+                    color: $filling;
+                    background-color: white;
+                    border: 1px solid $filling;
+                }
+            }
+        }
+    }
+}
+
+//Defineing Cards for overall component view

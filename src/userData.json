@@ -1,0 +1,58 @@
+{
+    "About": {
+        "profileImg": "./icons/profile2.png",
+        "fullName": "Ritin Tiwari",
+        "title": "Full Stack Developer",
+        "email": "ritintiwari417@gmail.com",
+        "telephone": "+91 7000339146",
+        "summary": "Aspiring full stack developer with a drive to create dynamic web applications."
+    },
+    "Skills": {
+        "Front End": [
+            {
+                "skill": "HTML5",
+                "level": "100%"
+            },
+            {
+                "skill": "SCSS/CSS",
+                "level": "95%"
+            },
+            {
+                "skill": "React",
+                "level": "70%"
+            },
+            {
+                "skill": "JavaScript",
+                "level": "80%"
+            }
+        ],
+        "Back End": [
+            {
+                "skill": "Python",
+                "level": "100%"
+            },
+            {
+                "skill": "Django",
+                "level": "80%"
+            },
+            {
+                "skill": "SQL",
+                "level": "90%"
+            },
+            {
+                "skill": "MongoDB",
+                "level": "70%"
+            }
+        ]
+    },
+    "Projects" : [
+        {
+            "tags": ["#html", "#css", "#JavScript"],
+            "previewImg" : "./icons/calculator.png",
+            "title" : "Calculator Web App",
+            "description": "This is a solution to the Calculator app challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+            "demoUrl": "https://calculator-app0204.web.app/",
+            "codeUrl": "https://github.com/ritin0204/calculator-app"
+        }
+    ]
+}
