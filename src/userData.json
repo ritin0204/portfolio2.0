@@ -47,12 +47,46 @@
     },
     "Projects" : [
         {
+            "id": 0,
             "tags": ["#html", "#css", "#JavScript"],
             "previewImg" : "./icons/calculator.png",
             "title" : "Calculator Web App",
             "description": "This is a solution to the Calculator app challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
             "demoUrl": "https://calculator-app0204.web.app/",
             "codeUrl": "https://github.com/ritin0204/calculator-app"
+        }
+    ],
+    "Experiences" : [
+        {
+            "componyLogo" : "./icons/netlink .png",
+            "start" : "Aug 2022",
+            "end": "Dec 2022",
+            "title" : "Python Developer Intern",
+            "Description" : "Gained experience in developing and implementing Python applications, using libraries and frameworks, and collaborating with a team to solve real-world problems."
+        },
+        {
+            "componyLogo" : "./icons/chegg.svg",
+            "start" : "March 2022",
+            "end": "July 2022",
+            "title" : "QA Expert",
+            "Description" : "Provided well-explained solutions to students with questions in different domains of computer science."
+        }
+    ],
+    "Hobbies": [
+        {
+            "coverImg": "./icons/music.jpg",
+            "title": "Music",
+            "description": "Music is the universal language that speaks to the soul."
+        },
+        {
+            "coverImg": "./icons/chess.jpg",
+            "title": "Chess",
+            "description": "Where strategy meets intellect, and every move counts - the game of chess."
+        },
+        {
+            "coverImg": "./icons/books.jpg",
+            "title": "Books",
+            "description": "Books are the keys to unlocking new worlds, expanding our minds, and enriching our lives."
         }
     ]
 }

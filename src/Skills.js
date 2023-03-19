@@ -4,7 +4,6 @@ const Skills = (props) => {
             <Skill skill={skillItem.skill} level={skillItem.level} key={skillItem}/>
         )
     });
-    console.log(props)
     return (
         <div className="skills">
             <h2>{props.title}</h2>
