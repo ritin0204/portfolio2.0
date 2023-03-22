@@ -25,6 +25,7 @@ $filling : rgba(47, 128, 237, 1);
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+
 @mixin card {
     background-color: $component-bg;
     border-radius: 12px;
@@ -36,6 +37,7 @@ $filling : rgba(47, 128, 237, 1);
     -moz-box-shadow: 0px 8px 15px 0px $component-shadow;
 }
 
+
 @mixin flex($direction, $justify, $align) {
     display: flex;
     justify-content: $justify;
@@ -43,10 +45,12 @@ $filling : rgba(47, 128, 237, 1);
     flex-direction: $direction;
 }
 
+
 @mixin zerogap {
     margin: 0;
     padding: 0;
 }
+
 
 body {
     margin: 0;
@@ -55,6 +59,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: $text;
 }
+
 
 .App {
     display: grid;
@@ -67,10 +72,12 @@ body {
     margin: auto;
 }
 
+
 h1,
 p {
     @include zerogap;
 }
+
 
 .About {
     @include card;
@@ -146,6 +153,7 @@ p {
     width: 100%;
 }
 
+
 .skills {
     @include card;
     width: 50%;
@@ -182,11 +190,13 @@ p {
                         height: 8px;
                         margin: 10px;
                         border-radius: 12px;
+
                         .inner-box {
                             background-color: $filling;
                             height: 100%;
                             width: 90%;
-                            border-radius: 12px;;
+                            border-radius: 12px;
+                            ;
                         }
                     }
                 }
@@ -198,20 +208,41 @@ p {
 
 
 .projects {
-    h1 {
+    .project-head {
         @include card;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 22px;
-        /* identical to box height */
-        color: $h1color;
+
+        h1 {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            /* identical to box height */
+            color: $h1color;
+        }
+
+        .tags-btns {
+            width: 80%;
+            button {
+                color: $h1color;
+                border: 1px solid $filling;
+                border-radius: 12px;
+                padding: 6px 20px;
+                margin: 20px 10px 0px 0;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 500;
+            }
+            .active{
+                background: $filling;
+                color: $body-bg;
+            }
+        }
     }
 
     .all-projects {
         .project-div {
             @include card;
             @include flex(row, space-between, center);
-
+            box-sizing: border-box;
             img {
                 object-fit: cover;
                 width: 30%;
@@ -219,15 +250,16 @@ p {
                 aspect-ratio: 1/1;
                 border-radius: 12px;
                 margin-right: 20px;
+                border: 0.2px groove rgb(69, 69, 69);
             }
 
             .tags {
                 font-weight: 500;
-                font-size: 16px;
-                line-height: 20px;
+                font-size: 12px;
+                line-height: 16px;
                 /* identical to box height */
                 color: $h1color;
-
+                opacity: 0.7;
                 span {
                     margin: 5px;
                 }
@@ -273,7 +305,25 @@ p {
             }
         }
     }
+    .page-indctr {
+        @include flex(row, flex-end ,center );
+        button {
+            width: 40px;
+            height: 40px;
+            font-size: 14px;
+            border: 1px solid $text;
+            border-radius: 8px;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-right: 10px ;
+        }
+        .activePage {
+            background-color: $filling;
+            color: $theme;
+        }
+    }
 }
+
 
 .experiences-div {
     @include card;
@@ -373,33 +423,40 @@ p {
     }
 }
 
+
 .connect-div {
     @include card;
+
     h1 {
         font-weight: 500;
         font-size: 24px;
         line-height: 29px;
         color: $h1color;
     }
-    .social-links{
-        @include flex(row, start , center );
+
+    .social-links {
+        @include flex(row, start, center);
+
         a.instagram {
-			color: #C13584;
+            color: #C13584;
         }
-        a.github{
+
+        a.github {
             color: $text;
         }
+
         a {
-            margin-top :20px;
+            margin-top: 20px;
             border: 1px solid $text;
             border-radius: 50%;
             width: 50px;
             height: 50px;
             margin-right: 20px;
-            @include flex(row,center ,center );
+            @include flex(row, center, center);
         }
     }
 }
+
 
 footer {
     grid-column: 1/3;
@@ -415,5 +472,92 @@ footer {
         text-decoration: none;
         font-weight: 700;
         color: $h1color;
+    }
+}
+
+@media  screen and (max-width:769px) {
+    body {
+        font-size: 80%;
+        .App {
+            grid-template-columns: 1fr 1fr;
+            box-sizing: border-box;
+            .sidegrid {
+                grid-column: 1/2;
+            }
+            .skill-div {
+                flex-direction: column;
+            }
+            .main-grid {
+                .skills {
+                    width: 80%;
+                }
+                .projects {
+                    .project-head {
+                        .tags-btns {
+                            width: 100%;
+                            button {
+                                padding: 6px 10px;
+                                margin: 10px 10px 0px 0;
+                            }
+                        }
+                    }
+                
+                    .all-projects {
+                        .project-div {
+                            @include flex(column, space-between, center);
+                            img {
+                                width: 100%;
+                                aspect-ratio: 21/9;
+                                border: none;
+                                margin: 0;
+                                margin-bottom: 10px;
+                            }
+                
+                            .tags {
+                                span {
+                                    margin: 2px;
+                                }
+                            }
+                
+                            .buttons {
+                                a {
+                                    font-size: 12px;
+                                    line-height: 16px;
+                                }
+                            }
+                        }
+                    }
+                    .page-indctr {
+                        @include flex(row, center ,center );
+                    }
+                }
+            }
+        }
+    }
+}
+@media  screen and (max-width:426px) {
+    body {
+        .App {
+            grid-template-columns: 1fr;
+            box-sizing: border-box;
+            .sidegrid {
+                grid-column: 1/3;
+            }
+            .skill-div {
+                flex-direction: column;
+            }
+            .main-grid {
+                .skills {
+                    width: 80%;
+                }
+                .projects {
+                    .project-head {
+                        .tags-btns {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

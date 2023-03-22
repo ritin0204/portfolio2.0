@@ -1,7 +1,7 @@
 const Skills = (props) => {
-    const skillsList = props.skills.map(skillItem => {
+    const skillsList = props.skills.map((skillItem,idx) => {
         return (
-            <Skill skill={skillItem.skill} level={skillItem.level} key={skillItem}/>
+            <Skill skill={skillItem.skill} level={skillItem.level} key={idx}/>
         )
     });
     return (

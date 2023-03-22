@@ -16,8 +16,8 @@ function App() {
       </div>
       <div className="main-grid">
         <div className="skill-div">
-        <Skills title="Front End" skills={data.Skills["Front End"]} />
-        <Skills title="Back End" skills={data.Skills["Back End"]} />
+        <Skills title="Front End" skills={data.Skills["Front End"]} key={"11"}/>
+        <Skills title="Back End" skills={data.Skills["Back End"]} key={"12"}/>
         </div>
         <Projects projects={data.Projects} />
         <Connect/>

@@ -1,7 +1,7 @@
 const Experiences = (props) => {
-    const companies = props.experiences.map(company => {
+    const companies = props.experiences.map((company, idx) => {
         return (
-            <Company company={company}/>
+            <Company company={company} key={idx}/>
         );
     });
     return (

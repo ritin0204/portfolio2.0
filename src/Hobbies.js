@@ -1,7 +1,7 @@
 const Hobbies= (props) => {
-    const allHobbies = props.hobbies.map(hobby => {
+    const allHobbies = props.hobbies.map((hobby, idx) => {
         return (
-            <Hobby hobby={hobby}/>
+            <Hobby hobby={hobby} id={idx} key={idx}/>
         );
     });
     return (
@@ -14,7 +14,7 @@ const Hobbies= (props) => {
 
 const Hobby = (props) => {
     return(
-        <div className="hobby-div">
+        <div className="hobby-div" key={props.id}>
             <img src={require(`${props.hobby.coverImg}`)} alt={props.hobby.title} className="coverImg"></img>
             <h2>{props.hobby.title}</h2>
             <p>{props.hobby.description}</p>
