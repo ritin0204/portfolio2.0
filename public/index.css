@@ -2,9 +2,54 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(241, 241, 241);
+  background-color: var(--body-bg);
   font-family: "Montserrat", sans-serif;
-  color: black;
+  color: var(--text);
+}
+
+.theme_toggle {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.theme_toggle .checkbox {
+  opacity: 0;
+  position: relative;
+}
+.theme_toggle .checkbox-label {
+  background-color: var(--theme);
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--filling);
+}
+.theme_toggle .checkbox-label .fa-moon {
+  color: #f1c40f;
+}
+.theme_toggle .checkbox-label .fa-sun {
+  color: #f39c12;
+}
+.theme_toggle .checkbox-label .ball {
+  background-color: var(--filling);
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+.theme_toggle .checkbox:checked + .checkbox-label .ball {
+  transform: translateX(25px);
 }
 
 .App {
@@ -13,9 +58,9 @@ body {
   grid-template-rows: auto;
   grid-auto-rows: auto;
   grid-auto-flow: dense;
-  margin: 3% 5%;
   max-width: max(1024px, 80vw);
   margin: auto;
+  margin-top: 50px;
 }
 
 h1,
@@ -25,15 +70,15 @@ p {
 }
 
 .About {
-  background-color: white;
+  background-color: var(--component-bg);
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
   height: -moz-fit-content;
   height: fit-content;
-  box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -webkit-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -moz-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -moz-box-shadow: 0px 8px 15px 0px var(--component-shadow);
   grid-row: 1/4;
 }
 .About .profile-image {
@@ -54,7 +99,7 @@ p {
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
-  color: #353535;
+  color: var(--h1color);
 }
 .About .about-description .about-head p {
   font-weight: 500;
@@ -78,7 +123,7 @@ p {
 .About .about-description .contact-div span a {
   text-decoration: none;
   font-size: 1rem;
-  color: black;
+  color: var(--text);
   font-size: 16px;
 }
 .About .about-description .about-summary {
@@ -87,7 +132,7 @@ p {
   font-size: 16px;
   line-height: 22px;
   /* Gray 3 */
-  color: #5e5e5e;
+  color: var(--pcolor);
 }
 
 .skill-div {
@@ -99,15 +144,15 @@ p {
 }
 
 .skills {
-  background-color: white;
+  background-color: var(--component-bg);
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
   height: -moz-fit-content;
   height: fit-content;
-  box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -webkit-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -moz-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -moz-box-shadow: 0px 8px 15px 0px var(--component-shadow);
   width: 50%;
 }
 .skills h2 {
@@ -116,7 +161,7 @@ p {
   line-height: 22px;
   text-transform: uppercase;
   /* Gray 2 */
-  color: #353535;
+  color: var(--h1color);
 }
 .skills table {
   width: 100%;
@@ -125,7 +170,7 @@ p {
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  color: #353535;
+  color: var(--h1color);
   margin: 0;
   padding: 0;
 }
@@ -139,57 +184,59 @@ p {
   border-radius: 12px;
 }
 .skills table tbody tr td .outer-box .inner-box {
-  background-color: rgb(47, 128, 237);
+  background-color: var(--filling);
   height: 100%;
   width: 90%;
   border-radius: 12px;
 }
 
 .projects .project-head {
-  background-color: white;
+  background-color: var(--component-bg);
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
   height: -moz-fit-content;
   height: fit-content;
-  box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -webkit-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -moz-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -moz-box-shadow: 0px 8px 15px 0px var(--component-shadow);
 }
 .projects .project-head h1 {
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
   /* identical to box height */
-  color: #353535;
+  color: var(--h1color);
 }
 .projects .project-head .tags-btns {
   width: 80%;
 }
 .projects .project-head .tags-btns button {
-  color: #353535;
-  border: 1px solid rgb(47, 128, 237);
+  color: var(--text);
+  background-color: var(--theme);
+  border: 1px solid var(--filling);
   border-radius: 12px;
   padding: 6px 20px;
   margin: 20px 10px 0px 0;
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
+  cursor: pointer;
 }
 .projects .project-head .tags-btns .active {
-  background: rgb(47, 128, 237);
-  color: rgb(241, 241, 241);
+  background: var(--filling);
+  color: var(--body-bg);
 }
 .projects .all-projects .project-div {
-  background-color: white;
+  background-color: var(--component-bg);
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
   height: -moz-fit-content;
   height: fit-content;
-  box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -webkit-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -moz-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -moz-box-shadow: 0px 8px 15px 0px var(--component-shadow);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -212,7 +259,7 @@ p {
   font-size: 12px;
   line-height: 16px;
   /* identical to box height */
-  color: #353535;
+  color: var(--h1color);
   opacity: 0.7;
 }
 .projects .all-projects .project-div .tags span {
@@ -222,12 +269,12 @@ p {
   font-weight: 500;
   font-size: 22px;
   line-height: 26px;
-  color: #333333;
+  color: var(--h2color);
 }
 .projects .all-projects .project-div p {
   font-size: 16px;
   line-height: 20px;
-  color: #5e5e5e;
+  color: var(--pcolor);
 }
 .projects .all-projects .project-div .buttons {
   display: flex;
@@ -245,13 +292,13 @@ p {
   margin: 20px 10px 0 0;
 }
 .projects .all-projects .project-div .buttons .demo {
-  color: white;
-  background-color: rgb(47, 128, 237);
+  color: var(--theme);
+  background-color: var(--filling);
 }
 .projects .all-projects .project-div .buttons .code {
-  color: rgb(47, 128, 237);
-  background-color: white;
-  border: 1px solid rgb(47, 128, 237);
+  color: var(--text);
+  background-color: var(--theme);
+  border: 1px solid var;
 }
 .projects .page-indctr {
   display: flex;
@@ -263,34 +310,34 @@ p {
   width: 40px;
   height: 40px;
   font-size: 14px;
-  border: 1px solid black;
+  border: 1px solid var(--text);
   border-radius: 8px;
   padding: 5px 10px;
   cursor: pointer;
   margin-right: 10px;
 }
 .projects .page-indctr .activePage {
-  background-color: rgb(47, 128, 237);
-  color: white;
+  background-color: var(--filling);
+  color: var(--theme);
 }
 
 .experiences-div {
-  background-color: white;
+  background-color: var(--component-bg);
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
   height: -moz-fit-content;
   height: fit-content;
-  box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -webkit-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -moz-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -moz-box-shadow: 0px 8px 15px 0px var(--component-shadow);
   padding: 5%;
 }
 .experiences-div h1 {
   font-weight: 500;
   font-size: 22px;
   line-height: 26px;
-  color: #353535;
+  color: var(--h1color);
   margin-bottom: 20px;
 }
 .experiences-div .company-div {
@@ -324,31 +371,31 @@ p {
   font-size: 16px;
   line-height: 20px;
   /* identical to box height */
-  color: #333333;
+  color: var(--h2color);
   margin: 10px 0 20px 0;
 }
 .experiences-div .company-div .company-details p {
   font-size: 14px;
   line-height: 18px;
-  color: #5e5e5e;
+  color: var(--pcolor);
 }
 
 .hobbies-div {
-  background-color: white;
+  background-color: var(--component-bg);
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
   height: -moz-fit-content;
   height: fit-content;
-  box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -webkit-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -moz-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -moz-box-shadow: 0px 8px 15px 0px var(--component-shadow);
 }
 .hobbies-div h1 {
   font-weight: 500;
   font-size: 22px;
   line-height: 26px;
-  color: #353535;
+  color: var(--h1color);
   margin-bottom: 20px;
 }
 .hobbies-div .hobby-div {
@@ -369,31 +416,31 @@ p {
   font-size: 18px;
   line-height: 20px;
   /* identical to box height */
-  color: #333333;
+  color: var(--h2color);
 }
 .hobbies-div .hobby-div p {
   font-size: 14px;
   line-height: 18px;
-  color: #5e5e5e;
+  color: var(--pcolor);
   margin-top: 20px;
 }
 
 .connect-div {
-  background-color: white;
+  background-color: var(--component-bg);
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
   height: -moz-fit-content;
   height: fit-content;
-  box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -webkit-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
-  -moz-box-shadow: 0px 8px 15px 0px rgba(110, 110, 110, 0.3);
+  box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
+  -moz-box-shadow: 0px 8px 15px 0px var(--component-shadow);
 }
 .connect-div h1 {
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
-  color: #353535;
+  color: var(--h1color);
 }
 .connect-div .social-links {
   display: flex;
@@ -405,11 +452,11 @@ p {
   color: #C13584;
 }
 .connect-div .social-links a.github {
-  color: black;
+  color: var(--text);
 }
 .connect-div .social-links a {
   margin-top: 20px;
-  border: 1px solid black;
+  border: 1px solid var(--text);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -428,12 +475,12 @@ footer {
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  color: #5e5e5e;
+  color: var(--pcolor);
 }
 footer a {
   text-decoration: none;
   font-weight: 700;
-  color: #353535;
+  color: var(--h1color);
 }
 
 @media screen and (max-width: 769px) {

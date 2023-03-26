@@ -1,1 +1,11 @@
-/*# sourceMappingURL=lightTheme.css.map */
+:root {
+  --body-bg: rgb(241, 241, 241);
+  --component-bg: white;
+  --text: black;
+  --component-shadow: rgba(110, 110, 110, 0.3);
+  --pcolor: #5e5e5e;
+  --h1color: #353535;
+  --h2color: #333333;
+  --filling: #036bda;
+  --theme: white;
+}/*# sourceMappingURL=lightTheme.css.map */

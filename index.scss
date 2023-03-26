@@ -1,40 +1,15 @@
-// Light Backgroud theme
-$body-bg: rgb(241, 241, 241);
-$component-bg: white;
-$text: black;
-$component-shadow: rgba(110, 110, 110, 0.3);
-$pcolor : #5e5e5e;
-$h1color: #353535;
-$h2color: #333333;
-$theme : white;
-
-// Dark Backgroud theme
-// $body-bg: rgb(0, 0, 0);
-// $component-bg: rgb(41, 41, 41);
-// $text: rgb(255, 255, 255);
-// $component-shadow: rgba(191, 191, 191, 0.3);
-
-// $filling : #E51D53;
-// $filling : #EEB408;
-// $pcolor : #bcb9b9;
-// $h1color: #d7d7d7;
-// $h2color: #cccbcb;
-// $theme: black;
-
-$filling : rgba(47, 128, 237, 1);
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 
 @mixin card {
-    background-color: $component-bg;
+    background-color: var(--component-bg);
     border-radius: 12px;
     padding: 20px;
     margin: 20px;
     height: fit-content;
-    box-shadow: 0px 8px 15px 0px $component-shadow;
-    -webkit-box-shadow: 0px 8px 15px 0px $component-shadow;
-    -moz-box-shadow: 0px 8px 15px 0px $component-shadow;
+    box-shadow: 0px 8px 15px 0px var(--component-shadow);
+    -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
+    -moz-box-shadow: 0px 8px 15px 0px var(--component-shadow);
 }
 
 
@@ -55,11 +30,55 @@ $filling : rgba(47, 128, 237, 1);
 body {
     margin: 0;
     padding: 0;
-    background-color: $body-bg;
+    background-color: var(--body-bg);
     font-family: 'Montserrat', sans-serif;
-    color: $text;
+    color: var(--text);
 }
 
+.theme_toggle {
+    position: absolute;
+    top: 20px;
+    @include flex(row, space-between, center);
+    .checkbox {
+        opacity: 0;
+        position: relative;
+    }
+
+    .checkbox-label {
+        background-color: var(--theme);
+        width: 50px;
+        height: 26px;
+        border-radius: 50px;
+        position: relative;
+        padding: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid var(--filling);
+        .fa-moon {
+            color: #f1c40f;
+        }
+    
+        .fa-sun {
+            color: #f39c12;
+        }
+        .ball {
+            background-color: var(--filling);
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            border-radius: 50%;
+            transition: transform 0.2s linear;
+        }
+    }
+
+    .checkbox:checked+.checkbox-label .ball {
+        transform: translateX(25px);
+    }
+}
 
 .App {
     display: grid;
@@ -67,9 +86,9 @@ body {
     grid-template-rows: auto;
     grid-auto-rows: auto;
     grid-auto-flow: dense;
-    margin: 3% 5%;
     max-width: max(1024px, 80vw);
     margin: auto;
+    margin-top: 50px;
 }
 
 
@@ -102,7 +121,7 @@ p {
                 font-size: 24px;
                 line-height: 29px;
 
-                color: $h1color;
+                color: var(--h1color);
             }
 
             p {
@@ -130,7 +149,7 @@ p {
                 a {
                     text-decoration: none;
                     font-size: 1rem;
-                    color: $text;
+                    color: var(--text);
                     font-size: 16px;
                 }
             }
@@ -142,7 +161,7 @@ p {
             font-size: 16px;
             line-height: 22px;
             /* Gray 3 */
-            color: $pcolor;
+            color: var(--pcolor);
         }
     }
 }
@@ -166,7 +185,7 @@ p {
 
         /* Gray 2 */
 
-        color: $h1color;
+        color: var(--h1color);
     }
 
     table {
@@ -176,7 +195,7 @@ p {
             font-weight: 600;
             font-size: 16px;
             line-height: 20px;
-            color: $h1color;
+            color: var(--h1color);
             @include zerogap;
 
             tr {
@@ -192,11 +211,10 @@ p {
                         border-radius: 12px;
 
                         .inner-box {
-                            background-color: $filling;
+                            background-color: var(--filling);
                             height: 100%;
                             width: 90%;
                             border-radius: 12px;
-                            ;
                         }
                     }
                 }
@@ -216,24 +234,28 @@ p {
             font-size: 18px;
             line-height: 22px;
             /* identical to box height */
-            color: $h1color;
+            color: var(--h1color);
         }
 
         .tags-btns {
             width: 80%;
+
             button {
-                color: $h1color;
-                border: 1px solid $filling;
+                color: var(--text);
+                background-color: var(--theme);
+                border: 1px solid var(--filling);
                 border-radius: 12px;
                 padding: 6px 20px;
                 margin: 20px 10px 0px 0;
                 font-size: 14px;
                 line-height: 20px;
                 font-weight: 500;
+                cursor: pointer;
             }
-            .active{
-                background: $filling;
-                color: $body-bg;
+
+            .active {
+                background: var(--filling);
+                color: var(--body-bg);
             }
         }
     }
@@ -243,6 +265,7 @@ p {
             @include card;
             @include flex(row, space-between, center);
             box-sizing: border-box;
+
             img {
                 object-fit: cover;
                 width: 30%;
@@ -258,8 +281,9 @@ p {
                 font-size: 12px;
                 line-height: 16px;
                 /* identical to box height */
-                color: $h1color;
+                color: var(--h1color);
                 opacity: 0.7;
+
                 span {
                     margin: 5px;
                 }
@@ -269,14 +293,14 @@ p {
                 font-weight: 500;
                 font-size: 22px;
                 line-height: 26px;
-                color: $h2color;
+                color: var(--h2color);
             }
 
             p {
                 font-size: 16px;
                 line-height: 20px;
 
-                color: $pcolor;
+                color: var(--pcolor);
             }
 
             .buttons {
@@ -293,33 +317,36 @@ p {
                 }
 
                 .demo {
-                    color: $theme;
-                    background-color: $filling;
+                    color: var(--theme);
+                    background-color: var(--filling);
                 }
 
                 .code {
-                    color: $filling;
-                    background-color: $theme;
-                    border: 1px solid $filling;
+                    color: var(--text);
+                    background-color: var(--theme);
+                    border: 1px solid var;
                 }
             }
         }
     }
+
     .page-indctr {
-        @include flex(row, flex-end ,center );
+        @include flex(row, flex-end, center);
+
         button {
             width: 40px;
             height: 40px;
             font-size: 14px;
-            border: 1px solid $text;
+            border: 1px solid var(--text);
             border-radius: 8px;
             padding: 5px 10px;
             cursor: pointer;
-            margin-right: 10px ;
+            margin-right: 10px;
         }
+
         .activePage {
-            background-color: $filling;
-            color: $theme;
+            background-color: var(--filling);
+            color: var(--theme);
         }
     }
 }
@@ -334,7 +361,7 @@ p {
         font-size: 22px;
         line-height: 26px;
 
-        color: $h1color;
+        color: var(--h1color);
         margin-bottom: 20px;
     }
 
@@ -365,7 +392,7 @@ p {
                 font-size: 16px;
                 line-height: 20px;
                 /* identical to box height */
-                color: $h2color;
+                color: var(--h2color);
                 margin: 10px 0 20px 0;
             }
 
@@ -373,7 +400,7 @@ p {
                 font-size: 14px;
                 line-height: 18px;
 
-                color: $pcolor;
+                color: var(--pcolor);
             }
         }
     }
@@ -389,7 +416,7 @@ p {
         font-size: 22px;
         line-height: 26px;
 
-        color: $h1color;
+        color: var(--h1color);
         margin-bottom: 20px;
     }
 
@@ -410,13 +437,13 @@ p {
             font-size: 18px;
             line-height: 20px;
             /* identical to box height */
-            color: $h2color;
+            color: var(--h2color);
         }
 
         p {
             font-size: 14px;
             line-height: 18px;
-            color: $pcolor;
+            color: var(--pcolor);
             margin-top: 20px;
         }
 
@@ -431,7 +458,7 @@ p {
         font-weight: 500;
         font-size: 24px;
         line-height: 29px;
-        color: $h1color;
+        color: var(--h1color);
     }
 
     .social-links {
@@ -442,12 +469,12 @@ p {
         }
 
         a.github {
-            color: $text;
+            color: var(--text);
         }
 
         a {
             margin-top: 20px;
-            border: 1px solid $text;
+            border: 1px solid var(--text);
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -466,45 +493,52 @@ footer {
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    color: $pcolor;
+    color: var(--pcolor);
 
     a {
         text-decoration: none;
         font-weight: 700;
-        color: $h1color;
+        color: var(--h1color);
     }
 }
 
-@media  screen and (max-width:769px) {
+@media screen and (max-width:769px) {
     body {
         font-size: 80%;
+
         .App {
             grid-template-columns: 1fr 1fr;
             box-sizing: border-box;
+
             .sidegrid {
                 grid-column: 1/2;
             }
+
             .skill-div {
                 flex-direction: column;
             }
+
             .main-grid {
                 .skills {
                     width: 80%;
                 }
+
                 .projects {
                     .project-head {
                         .tags-btns {
                             width: 100%;
+
                             button {
                                 padding: 6px 10px;
                                 margin: 10px 10px 0px 0;
                             }
                         }
                     }
-                
+
                     .all-projects {
                         .project-div {
                             @include flex(column, space-between, center);
+
                             img {
                                 width: 100%;
                                 aspect-ratio: 21/9;
@@ -512,13 +546,13 @@ footer {
                                 margin: 0;
                                 margin-bottom: 10px;
                             }
-                
+
                             .tags {
                                 span {
                                     margin: 2px;
                                 }
                             }
-                
+
                             .buttons {
                                 a {
                                     font-size: 12px;
@@ -527,29 +561,35 @@ footer {
                             }
                         }
                     }
+
                     .page-indctr {
-                        @include flex(row, center ,center );
+                        @include flex(row, center, center);
                     }
                 }
             }
         }
     }
 }
-@media  screen and (max-width:426px) {
+
+@media screen and (max-width:426px) {
     body {
         .App {
             grid-template-columns: 1fr;
             box-sizing: border-box;
+
             .sidegrid {
                 grid-column: 1/3;
             }
+
             .skill-div {
                 flex-direction: column;
             }
+
             .main-grid {
                 .skills {
                     width: 80%;
                 }
+
                 .projects {
                     .project-head {
                         .tags-btns {
