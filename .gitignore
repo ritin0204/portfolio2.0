@@ -26,3 +26,10 @@ yarn-error.log*
 
 /src/*.json
 src/userData.json
+
+makefile
+
+# Firebase
+firebase.json
+.firebaserc
+firebase-debug.log
