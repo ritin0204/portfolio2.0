@@ -90,9 +90,18 @@ const Projects = (props) => {
                 {projects}
             </div>
             <div className="page-indctr">
-            <button key="<" onClick={() => {setCurrentPage(((currentPage%totalPages)-1) === 0 ? totalPages :(currentPage%totalPages)-1)}}>{"<"}</button>
+                {currentPage === 1 ? 
+                <button key="Prev" disabled>Prev</button>
+                :
+                <button key="Prev" onClick={() => {setCurrentPage(currentPage - 1)}}>Prev</button>
+                }
                 {pagination}
-            <button key=">" onClick={() => {setCurrentPage((currentPage%totalPages)+1)}}>{">"}</button>
+                {
+                    currentPage === totalPages? 
+                    <button key="Next" disabled>Next</button>
+                    :
+                    <button key="Next" onClick={() => {setCurrentPage(currentPage + 1)}}>Next</button>
+                }
             </div>
         </div>
     );
@@ -107,7 +116,11 @@ const Project = (props) => {
     })
     return (
         <div className="project-div" key={project.id}>
-            <img src={require(`${project.previewImg}`)} alt={project.title}></img>
+            <img src={
+                require(`${project.previewImg}`)
+                }
+                alt={project.title}>
+            </img>
             <div className="project-details">
                 <div className="tags">{tags}</div>
                 <h2>{project.title}</h2>

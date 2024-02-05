@@ -239,18 +239,18 @@ p {
 
         .tags-btns {
             width: 80%;
-
             button {
                 color: var(--text);
                 background-color: var(--theme);
                 border: 1px solid var(--filling);
-                border-radius: 12px;
+                border-radius: 4px;
                 padding: 6px 20px;
                 margin: 20px 10px 0px 0;
                 font-size: 14px;
                 line-height: 20px;
                 font-weight: 500;
                 cursor: pointer;
+                transition: all 0.1s ease-in-out;
             }
 
             .active {
@@ -261,22 +261,28 @@ p {
     }
 
     .all-projects {
+        min-height: fit-content;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: stretch;
         .project-div {
             @include card;
-            @include flex(row, space-between, center);
+            @include flex(column, space-between, center);
             box-sizing: border-box;
-
             img {
                 object-fit: cover;
-                width: 30%;
+                width: 100%;
                 object-position: center;
                 aspect-ratio: 1/1;
-                border-radius: 12px;
-                margin-right: 20px;
-                border: 0.2px groove rgb(69, 69, 69);
+                border-radius: 8px;
+                margin: 20px;
+                border: 1px solid rgba(69, 69, 69, 0.43);
             }
 
             .tags {
+                @include flex(row, flex-start, center);
+                flex-wrap: wrap;
                 font-weight: 500;
                 font-size: 12px;
                 line-height: 16px;
@@ -297,9 +303,8 @@ p {
             }
 
             p {
-                font-size: 16px;
+                font-size: 14px;
                 line-height: 20px;
-
                 color: var(--pcolor);
             }
 
@@ -312,7 +317,7 @@ p {
                     font-weight: 500;
                     font-size: 14px;
                     line-height: 18px;
-                    border-radius: 12px;
+                    border-radius: 4px;
                     margin: 20px 10px 0 0;
                 }
 
@@ -324,24 +329,27 @@ p {
                 .code {
                     color: var(--text);
                     background-color: var(--theme);
-                    border: 1px solid var;
+                    border: 1px solid rgba(0, 0, 0, 0.421);
                 }
             }
         }
     }
 
     .page-indctr {
-        @include flex(row, flex-end, center);
-
+        @include flex(row, center, center);
         button {
-            width: 40px;
-            height: 40px;
-            font-size: 14px;
-            border: 1px solid var(--text);
-            border-radius: 8px;
-            padding: 5px 10px;
+            padding: 8px 15px;
+            font-weight: 700;
             cursor: pointer;
-            margin-right: 10px;
+            border: none;
+            border: 1px solid var(--component-bg);
+            border-radius: 4px;
+            margin: 1px;
+            background-color: var(--component-bg);
+            color: var(--text);
+        }
+        button:disabled{
+            opacity: 0.6;
         }
 
         .activePage {
@@ -366,13 +374,13 @@ p {
     }
 
     .company-div {
-        @include flex(row, center, center);
+        @include flex(column, center, center);
         margin-top: 25px;
 
         .company-logo {
             object-fit: cover;
             object-position: center;
-            width: 25%;
+            width: 30%;
         }
 
         .company-details {
@@ -462,7 +470,7 @@ p {
     }
 
     .social-links {
-        @include flex(row, start, center);
+        @include flex(row, flex-start, center);
 
         a.instagram {
             color: #C13584;
@@ -474,8 +482,8 @@ p {
 
         a {
             margin-top: 20px;
-            border: 1px solid var(--text);
-            border-radius: 50%;
+            border: 1px solid var(--body-bg);
+            border-radius: 4px;
             width: 50px;
             height: 50px;
             margin-right: 20px;
@@ -536,6 +544,7 @@ footer {
                     }
 
                     .all-projects {
+                        display: block;
                         .project-div {
                             @include flex(column, space-between, center);
 

@@ -104,7 +104,7 @@
             "id": 6,
             "tags": ["#python", "#django", "#responsive", "#fullstack","#javascript", "#on-going"],
             "previewImg" : "./icons/fill-in.jpg",
-            "title" : "Corival (Quiz Website)",
+            "title" : "Corival (Hiring Management System)",
             "description": "This is a solution to the Calculator app challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
             "demoUrl": null,
             "codeUrl": "https://github.com/ritin0204/Corival"

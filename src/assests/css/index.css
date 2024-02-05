@@ -74,7 +74,6 @@ p {
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
-  height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0px 8px 15px 0px var(--component-shadow);
   -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
@@ -82,11 +81,9 @@ p {
   grid-row: 1/4;
 }
 .About .profile-image {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
-  -o-object-position: center;
-     object-position: center;
+  object-position: center;
   aspect-ratio: 1/1;
   border-radius: 12px;
 }
@@ -112,8 +109,7 @@ p {
   margin: 20px 0;
 }
 .About .about-description .contact-div span .icon {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 20px;
   height: 20px;
   position: relative;
@@ -148,7 +144,6 @@ p {
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
-  height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0px 8px 15px 0px var(--component-shadow);
   -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
@@ -195,7 +190,6 @@ p {
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
-  height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0px 8px 15px 0px var(--component-shadow);
   -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
@@ -215,24 +209,31 @@ p {
   color: var(--text);
   background-color: var(--theme);
   border: 1px solid var(--filling);
-  border-radius: 12px;
+  border-radius: 4px;
   padding: 6px 20px;
   margin: 20px 10px 0px 0;
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
   cursor: pointer;
+  transition: all 0.1s ease-in-out;
 }
 .projects .project-head .tags-btns .active {
   background: var(--filling);
   color: var(--body-bg);
+}
+.projects .all-projects {
+  min-height: fit-content;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
 }
 .projects .all-projects .project-div {
   background-color: var(--component-bg);
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
-  height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0px 8px 15px 0px var(--component-shadow);
   -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
@@ -240,21 +241,24 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   box-sizing: border-box;
 }
 .projects .all-projects .project-div img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 30%;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  width: 100%;
+  object-position: center;
   aspect-ratio: 1/1;
-  border-radius: 12px;
-  margin-right: 20px;
-  border: 0.2px groove rgb(69, 69, 69);
+  border-radius: 8px;
+  margin: 20px;
+  border: 1px solid rgba(69, 69, 69, 0.43);
 }
 .projects .all-projects .project-div .tags {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
@@ -272,7 +276,7 @@ p {
   color: var(--h2color);
 }
 .projects .all-projects .project-div p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   color: var(--pcolor);
 }
@@ -288,7 +292,7 @@ p {
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
-  border-radius: 12px;
+  border-radius: 4px;
   margin: 20px 10px 0 0;
 }
 .projects .all-projects .project-div .buttons .demo {
@@ -298,23 +302,27 @@ p {
 .projects .all-projects .project-div .buttons .code {
   color: var(--text);
   background-color: var(--theme);
-  border: 1px solid var;
+  border: 1px solid rgba(0, 0, 0, 0.421);
 }
 .projects .page-indctr {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
 }
 .projects .page-indctr button {
-  width: 40px;
-  height: 40px;
-  font-size: 14px;
-  border: 1px solid var(--text);
-  border-radius: 8px;
-  padding: 5px 10px;
+  padding: 8px 15px;
+  font-weight: 700;
   cursor: pointer;
-  margin-right: 10px;
+  border: none;
+  border: 1px solid var(--component-bg);
+  border-radius: 4px;
+  margin: 1px;
+  background-color: var(--component-bg);
+  color: var(--text);
+}
+.projects .page-indctr button:disabled {
+  opacity: 0.6;
 }
 .projects .page-indctr .activePage {
   background-color: var(--filling);
@@ -326,7 +334,6 @@ p {
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
-  height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0px 8px 15px 0px var(--component-shadow);
   -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
@@ -344,15 +351,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 25px;
 }
 .experiences-div .company-div .company-logo {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-  width: 25%;
+  object-fit: cover;
+  object-position: center;
+  width: 30%;
 }
 .experiences-div .company-div .company-details {
   margin-left: 20px;
@@ -385,7 +390,6 @@ p {
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
-  height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0px 8px 15px 0px var(--component-shadow);
   -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
@@ -402,8 +406,7 @@ p {
   margin: 20px 0;
 }
 .hobbies-div .hobby-div .coverImg {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   aspect-ratio: 21/9;
   border-radius: 12px;
@@ -430,7 +433,6 @@ p {
   border-radius: 12px;
   padding: 20px;
   margin: 20px;
-  height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0px 8px 15px 0px var(--component-shadow);
   -webkit-box-shadow: 0px 8px 15px 0px var(--component-shadow);
@@ -444,7 +446,7 @@ p {
 }
 .connect-div .social-links {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
 }
@@ -456,8 +458,8 @@ p {
 }
 .connect-div .social-links a {
   margin-top: 20px;
-  border: 1px solid var(--text);
-  border-radius: 50%;
+  border: 1px solid var(--body-bg);
+  border-radius: 4px;
   width: 50px;
   height: 50px;
   margin-right: 20px;
@@ -506,6 +508,9 @@ footer a {
   body .App .main-grid .projects .project-head .tags-btns button {
     padding: 6px 10px;
     margin: 10px 10px 0px 0;
+  }
+  body .App .main-grid .projects .all-projects {
+    display: block;
   }
   body .App .main-grid .projects .all-projects .project-div {
     display: flex;

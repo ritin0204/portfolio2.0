@@ -6,6 +6,9 @@ import Projects from "./Projects.js";
 import Experiences from "./Experiences.js";
 import Connect from "./Connect.js";
 
+// Importing Css file
+import './assests/css/index.css';
+
 function App() {
   const changeTheme = () => {
     const checkbox = document.querySelector(".checkbox");
@@ -38,8 +41,8 @@ function App() {
             <Skills title="Front End" skills={data.Skills["Front End"]} key={"11"} />
             <Skills title="Back End" skills={data.Skills["Back End"]} key={"12"} />
           </div>
-          <Projects projects={data.Projects} />
           <Connect />
+          <Projects projects={data.Projects} />
         </div>
         <footer>created by <a href="https://www.linkedin.com/in/ritin-tiwari/">@Ritin Tiwari</a> -Linkedin.com</footer>
       </main>
