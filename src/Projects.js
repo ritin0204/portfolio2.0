@@ -116,11 +116,13 @@ const Project = (props) => {
     })
     return (
         <div className="project-div" key={project.id}>
-            <img src={
-                require(`${project.previewImg}`)
-                }
-                alt={project.title}>
-            </img>
+            <div className="img-outer-div">
+                <img src={
+                    require(`${project.previewImg}`)
+                    }
+                    alt={project.title}>
+                </img>
+            </div>
             <div className="project-details">
                 <div className="tags">{tags}</div>
                 <h2>{project.title}</h2>

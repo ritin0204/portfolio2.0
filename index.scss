@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 @mixin card {
     background-color: var(--component-bg);
@@ -96,12 +96,22 @@ h1,
 p {
     @include zerogap;
 }
-
+// icons color 
+.leetcode {
+    svg {
+        fill: var(--text);
+    }
+}
+.github {
+    svg {
+        fill: var(--text);
+    }
+}
 
 .About {
     @include card;
     grid-row: 1/4;
-
+    
     .profile-image {
         object-fit: cover;
         width: 100%;
@@ -115,12 +125,13 @@ p {
 
         .about-head {
             h1 {
-                font-family: 'Montserrat';
+                // font-family: 'Montserrat';
+                font-family: 'Great Vibes', cursive;
                 font-style: normal;
-                font-weight: 600;
-                font-size: 24px;
-                line-height: 29px;
-
+                font-weight: 400;
+                font-size: 40px;
+                line-height: 40px;
+                letter-spacing: 1px;
                 color: var(--h1color);
             }
 
@@ -270,14 +281,23 @@ p {
             @include card;
             @include flex(column, space-between, center);
             box-sizing: border-box;
-            img {
-                object-fit: cover;
+            .img-outer-div {
                 width: 100%;
-                object-position: center;
-                aspect-ratio: 1/1;
-                border-radius: 8px;
-                margin: 20px;
-                border: 1px solid rgba(69, 69, 69, 0.43);
+                height: 100%;
+                overflow: hidden;
+                cursor: pointer;
+                border-radius: 12px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                transition: all 1s ease-in 0.1s;
+            }
+
+            .img-outer-div:hover img {
+                transform: scale(1.2);
             }
 
             .tags {
@@ -461,7 +481,7 @@ p {
 
 .connect-div {
     @include card;
-
+    width: fit-content;
     h1 {
         font-weight: 500;
         font-size: 24px;
